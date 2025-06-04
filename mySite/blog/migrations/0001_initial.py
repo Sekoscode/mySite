@@ -4,6 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    Initial migration for the 'blog' app.
+
+    This migration creates the 'Post' model with the following fields:
+        - id: Auto-incrementing primary key
+        - title: Title of the post (up to 140 characters)
+        - body: Main content of the post
+        - date: Date and time of publication or creation
+    """
 
     initial = True
 

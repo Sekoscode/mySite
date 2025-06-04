@@ -4,6 +4,12 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    """
+    Migration to add the 'signature' field to the 'Post' model.
+
+    This field is a CharField with a maximum length of 140 characters
+    and a default value of "You can always change your mind!".
+    """
 
     dependencies = [
         ('blog', '0001_initial'),
@@ -13,6 +19,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='signature',
-            field=models.CharField(default='You can always change your mind!', max_length=140),
+            field=models.CharField(
+                default='You can always change your mind!',
+                max_length=140
+            ),
         ),
     ]
