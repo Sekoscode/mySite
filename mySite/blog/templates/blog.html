@@ -1,0 +1,10 @@
+{% extends "header.html" %}
+
+{% block cont %}
+
+    {% for post in list_of_posts %}
+        <h5>{{ post.date | date:"Y-m-d" }}<a href="{% url 'post_detail_view_path' post.id %}">
+        {{ post.title }}</a></h5>
+    {% endfor %}
+
+{% endblock cont %}

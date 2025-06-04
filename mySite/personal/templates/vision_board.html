@@ -1,0 +1,65 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vision Board </title>
+</head>
+<body>
+    <div class="container">
+        <h1>My Vision Board</h1>
+        <div class="vision-item">
+            <img src="{% static 'assets/IMG_6437.jpg' %}" alt="Image representing goal 1">
+            <p>Hair</p>
+        </div>
+        <div class="vision-item">
+            <img src="{% static 'assets/IMG_6438.jpg' %}" alt="Image representing goal 2">
+            <p>Style</p>
+        </div>
+        <div class="vision-item">
+            <img src="{% static 'assets/IMG_6439.jpg' %}" alt="Image representing goal 3">
+            <p>Career</p>
+        </div>
+        <!-- Add more vision items here -->
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .vision-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .vision-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .vision-item p {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+</body>
+</html>

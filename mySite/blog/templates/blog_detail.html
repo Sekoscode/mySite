@@ -1,0 +1,10 @@
+{% extends "header.html" %}
+
+{% block cont %}
+<h3>{{ post.title }}</h3>
+<h6> on {{ post.date }}</h6>
+<div class = "container">
+    {{ post.body}}
+</div>
+<br><br>
+{% endblock cont %}

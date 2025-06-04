@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        {% if user.is_authenticated %}
+        <h2 class="mb-4">Welcome {{ user.username }} !</h2>
+            <h3 class="mb-4">Latest Polls</h3>
+
+            {% if latest_question_list %}
+            <div class="list-group">
+                {% for question in latest_question_list %}
+                <a href="{% url 'polls:detail' question.id %}" class="list-group-item list-group-item-action">
+                    {{ question.question_text }}
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info" role="alert">
+                No polls are available.
+            </div>
+            {% endif %}
+            <br>
+            <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
